@@ -22,10 +22,14 @@ export default function Signup() {
           userName: userName,
           phone: phone
         }).then(() => {
-          history.push("/login")
+          history.push("/login");
         })
       })
     })
+  }
+
+  const gotoLogin = () => {
+    history.push('/login');
   }
 
   return (
@@ -84,7 +88,7 @@ export default function Signup() {
           <br />
           <button>Signup</button>
         </form>
-        <a>Login</a>
+        <a onClick={gotoLogin}>Login</a>
       </div>
     </div>
   );

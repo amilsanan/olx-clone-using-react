@@ -17,6 +17,10 @@ function Login() {
       alert(error.message);
     })
   }
+
+  const gotoSignup = () => {
+    history.push('/signup');
+  }
   
   return (
     <div>
@@ -50,7 +54,7 @@ function Login() {
           <br />
           <button onClick={handleLogin}>Login</button>
         </form>
-        <a>Signup</a>
+        <a onClick={gotoSignup}>Signup</a>
       </div>
     </div>
   );

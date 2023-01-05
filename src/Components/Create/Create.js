@@ -1,11 +1,13 @@
 import React, { Fragment, useContext, useState } from 'react';
 import './Create.css';
 import Header from '../Header/Header';
+import { useHistory } from 'react-router-dom';
 import { FirebaseContext,AuthContext } from '../../store/Context';
 
 const Create = () => {
   const {firebase} = useContext(FirebaseContext);
   const {user} = useContext(AuthContext);
+  const history = useHistory();
   const [name, setName] = useState('');
   const [category, setCategory] = useState('');
   const [price, setPrice] = useState('');
@@ -23,6 +25,7 @@ const Create = () => {
           userId:user.uid,
           createdAt:date.toDateString()
         })
+        history.push('/')
       })
     })
   }

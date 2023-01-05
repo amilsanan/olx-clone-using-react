@@ -39,19 +39,19 @@ function Header() {
           <Arrow></Arrow>
         </div>
         <div className="loginPage">
-          <span>{user? `Welcome ${user.displayName}` : 'Login'}</span>
+          <span>{user? `Welcome ${user.displayName}` : <a onClick={()=>history.push('/login')}>Login</a>}</span>
           <hr />
         </div>
 
         { user &&  <span onClick={()=>{
           firebase.auth().signOut();
-          history.push('/login')
+          history.push('/login');
         }}>Logout</span>}
         <div className="sellMenu">
           <SellButton></SellButton>
           <div className="sellMenuContent">
             <SellButtonPlus></SellButtonPlus>
-            <span>SELL</span>
+            <span onClick={()=>history.push('/create')}>SELL</span>
           </div>
         </div>
       </div>
